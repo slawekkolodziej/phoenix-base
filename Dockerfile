@@ -4,7 +4,8 @@ FROM elixir:latest
 RUN apt-get update \
  && apt-get install -y \
  	curl \
- 	libpq-dev
+ 	libpq-dev \
+ 	postgresql-client-9.4
 
 # Get recent nodejs
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
