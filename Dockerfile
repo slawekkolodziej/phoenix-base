@@ -1,11 +1,15 @@
 FROM elixir:latest
 
 # Install deps
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update \
+ && apt-get install -y \
+ 	curl \
+ 	libpq-dev
 
 # Get recent nodejs
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-	apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+ && apt-get install -y \
+ 	nodejs
 
 # Set application dir
 ENV APP_HOME /app
